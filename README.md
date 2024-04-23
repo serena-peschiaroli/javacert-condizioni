@@ -38,6 +38,8 @@ Selected Chocolate flavor.
 Selected Chocolate flavor.
 Thank you!
 
+(Flavor array has indexes  0 and 1 so calling 2 throws an exception.)
+
 __________________________________________
 
 - 2. 
@@ -48,16 +50,16 @@ Given the code fragment:
 int value = 10;
 
 int a = ++value;
+//preincrement, value=11 && a==11
 
-int b = value;
+int b = value; //11
+int c = value++;//post increment, here 11, then value is 12
 
-int c = value++;
+if (a <= b && a <= c) {//true
 
-if (a <= b && a <= c) {
+ if (b <=c) { //true
 
- if (b <=c) {
-
-  a = ++b;
+  a = ++b; //12
 
  } else {
 
@@ -93,7 +95,7 @@ public static void main(String[] args) {
 
 int b = 3;
 
-if (!(b > 3)) {
+if (!(b > 3)) { //true
 
 System.out.println(“square“);
 
@@ -101,7 +103,7 @@ System.out.println(“square“);
 
 {
 
-System.out.println(“circle“);
+System.out.println(“circle“);//stand alone code so its printed
 
 }
 
@@ -137,7 +139,7 @@ package com.example;
 public class Main{
 public static void main(String[] args) {
 int a = 1;
-if(a++ == 1){
+if(a++ == 1){//post increment, here  a=1, then a =2
 a -= 1;
 
 System.out.print(a);
@@ -164,7 +166,7 @@ Given the code fragment:
 
 switch (var) {
 
-  case “1“:
+  case “1“: //case with string "1"
 
     System.out.println(“one“);
 
@@ -192,7 +194,7 @@ public class ArithmeticResultsOutput {
 
  public static void main(String[] args) {
 
-  int i, j = 0;
+  int i, j = 0; //i not initialized
 
   if (i++ == ++j) {
 
@@ -233,7 +235,7 @@ boolean value1 = 10 + 5 >= 2 + 13;
 
 int value2 = 0;
 
-if (value1 == true) {
+if (value1 == true) { //true
 
 value2 = 5 * 3 + 10 / 2;
 
